@@ -14,3 +14,5 @@ def lambda_handler(event, context):
             "temperature": new_image['temperature']['S'],
             "description": new_image['description']['S']
         }
+
+        file_name = f"{item['city']}_{item['time']}.json"
