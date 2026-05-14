@@ -37,3 +37,14 @@ SELECT
     data:weather::STRING AS weather,
     data:time::TIMESTAMP AS weather_time
 FROM weather_table;
+
+-- Create Snowpipe for Auto Ingest
+CREATE OR REPLACE PIPE weather_pipe
+AUTO_INGEST = FALSE
+AS
+COPY INTO weather_table(data)
+FROM (
+    SELECT $1
+    FROM @my_stage
+)
+FILE_FORMAT = (TYPE = 'JSON');
