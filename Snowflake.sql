@@ -63,3 +63,6 @@ SELECT COUNT(*) FROM weather_table;
 
 -- Show Pipe Details
 SHOW PIPES;
+
+-- Load Existing Files Manually
+ALTER PIPE weather_pipe REFRESH;
