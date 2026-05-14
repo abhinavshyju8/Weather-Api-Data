@@ -48,3 +48,12 @@ FROM (
     FROM @my_stage
 )
 FILE_FORMAT = (TYPE = 'JSON');
+
+-- Check Copy History
+SELECT *
+FROM TABLE(
+    INFORMATION_SCHEMA.COPY_HISTORY(
+        TABLE_NAME => 'WEATHER_TABLE',
+        START_TIME => DATEADD(HOURS, -1, CURRENT_TIMESTAMP())
+    )
+);
