@@ -14,3 +14,10 @@ def lambda_handler(event, context):
     data = json.loads(response.read())
 
     print(data)  # DEBUG (very important)
+
+    # Check if API failed
+    if "main" not in data:
+        return {
+            "statusCode": 400,
+            "body": json.dumps(data)
+        }
