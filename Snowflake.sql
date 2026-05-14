@@ -57,3 +57,6 @@ FROM TABLE(
         START_TIME => DATEADD(HOURS, -1, CURRENT_TIMESTAMP())
     )
 );
+
+-- Check Row Count
+SELECT COUNT(*) FROM weather_table;
