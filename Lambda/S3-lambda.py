@@ -6,3 +6,4 @@ BUCKET_NAME = "weather-bucket-1111"
 
 def lambda_handler(event, context):
     for record in event['Records']:
+        new_image = record['dynamodb']['NewImage']       
