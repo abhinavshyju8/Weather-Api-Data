@@ -21,3 +21,6 @@ def lambda_handler(event, context):
             "statusCode": 400,
             "body": json.dumps(data)
         }
+    
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('weather-db')
