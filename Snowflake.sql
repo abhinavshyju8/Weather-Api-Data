@@ -15,3 +15,11 @@ list @my_stage;
 CREATE OR REPLACE TABLE weather_table (
     data VARIANT
 );
+
+-- Load Existing Files into Table
+COPY INTO weather_table(data)
+FROM (
+    SELECT $1
+    FROM @my_stage
+)
+FILE_FORMAT = (TYPE = 'JSON');
