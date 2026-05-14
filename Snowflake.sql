@@ -60,3 +60,6 @@ FROM TABLE(
 
 -- Check Row Count
 SELECT COUNT(*) FROM weather_table;
+
+-- Show Pipe Details
+SHOW PIPES;
