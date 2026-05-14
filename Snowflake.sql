@@ -1,0 +1,2 @@
+CREATE OR REPLACE FILE FORMAT weather_json
+TYPE = 'JSON';
