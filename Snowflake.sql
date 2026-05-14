@@ -8,3 +8,5 @@ CREDENTIALS = (
     AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
 )
 FILE_FORMAT = weather_json;
+
+list @my_stage;
