@@ -24,3 +24,10 @@ def lambda_handler(event, context):
     
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('weather-db')
+
+    item = {
+        "city": city,
+        "time": datetime.now().isoformat(),
+        "temperature": str(data["main"]["temp"]),
+        "description": data["weather"][0]["description"]
+    }
