@@ -23,3 +23,8 @@ FROM (
     FROM @my_stage
 )
 FILE_FORMAT = (TYPE = 'JSON');
+
+-- View Raw JSON
+SELECT data
+FROM weather_table
+LIMIT 1;
