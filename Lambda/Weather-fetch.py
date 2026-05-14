@@ -9,3 +9,8 @@ def lambda_handler(event, context):
     city = "Kozhikode"
 
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+
+    response = urllib.request.urlopen(url)
+    data = json.loads(response.read())
+
+    print(data)  # DEBUG (very important)
